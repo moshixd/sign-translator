@@ -1,5 +1,18 @@
+import ProfileAction from "../components/Profile/ProfileAction";
+import ProfileHeader from "../components/Profile/ProfileHeader";
+import ProfileTranslations from "../components/Profile/ProfileTranslations";
+import { useUser } from "../context/UserContext";
+import withAuth from "../hoc/withAuth";
 const Profile = () => {
-  return <h1>ProfilePage</h1>;
+  const { user } = useUser();
+  return (
+    <>
+      <p>Profile</p>
+      <ProfileHeader username={user.username} />
+      <ProfileAction />
+      <ProfileTranslations translations={user.translations} />
+    </>
+  );
 };
 
-export default Profile;
+export default withAuth(Profile);

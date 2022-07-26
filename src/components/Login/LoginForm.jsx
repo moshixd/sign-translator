@@ -1,4 +1,10 @@
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { loginUser } from "../../api/user";
+import { storageSave } from "../../utils/storage";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../../context/UserContext";
+import { STORAGE_KEY_USER } from "../../const/StorageKeys";
 
 const usernameConfig = {
   required: true,
@@ -11,12 +17,36 @@ const LoginForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const { user, setUser } = useUser();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  // Local state
+  const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState(null);
+  const navigate = useNavigate();
+
+  // Side effects
+  useEffect(() => {
+    if (user !== null) {
+      navigate("profile");
+    }
+    console.log("User has changed!", user);
+  }, [user, navigate]); // Empty dependencies - Only run once
+
+  // Event handlers
+  const onSubmit = async ({ username }) => {
+    setLoading(true);
+    const [error, userResponse] = await loginUser(username);
+    if (error !== null) {
+      setApiError(error);
+    }
+    if (userResponse !== null) {
+      storageSave(STORAGE_KEY_USER, userResponse);
+      setUser(userResponse);
+    }
+    setLoading(false);
   };
-  console.log(errors);
 
+  // render functions
   const errorMessage = (() => {
     if (!errors.username) {
       return null;
@@ -30,6 +60,7 @@ const LoginForm = () => {
       return <span>Username is too short (minimum 3)</span>;
     }
   })();
+
   return (
     <>
       <h2>What's your name?</h2>
@@ -43,7 +74,12 @@ const LoginForm = () => {
           />
           {errorMessage}
         </fieldset>
-        <button type='submit'>Log in</button>
+        <button type='submit' disabled={loading}>
+          Log in
+        </button>
+
+        {loading && <p>Logging in...</p>}
+        {apiError && <p>{apiError}</p>}
       </form>
     </>
   );
