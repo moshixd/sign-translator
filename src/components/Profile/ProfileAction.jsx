@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import translationAPI from "../../api/translation";
+import { translationClearHistory } from "../../api/translationClearHistory";
 import { STORAGE_KEY_USER } from "../../const/StorageKeys";
 import { useUser } from "../../context/UserContext";
-import { storageDelete, storageRead } from "../../utils/storage";
+import { storageDelete, storageSave } from "../../utils/storage";
 
 const ProfileAction = ({ logout }) => {
   const { user, setUser } = useUser();
@@ -15,10 +15,24 @@ const ProfileAction = ({ logout }) => {
   };
 
   const handleClearHistory = async () => {
-    const updatedUser = await translationAPI("");
+    if (!window.confirm("Are you sure?\nThis cannot be undone!")) {
+      return;
+    }
+
+    const [clearError] = await translationClearHistory(user.id);
+
+    if (clearError !== null) {
+      return;
+    }
+
+    const updatedUser = {
+      ...user,
+      translations: [],
+    };
+
+    storageSave(STORAGE_KEY_USER, updatedUser);
     setUser(updatedUser);
   };
-
   return (
     <>
       <ul>

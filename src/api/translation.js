@@ -1,22 +1,12 @@
 import { STORAGE_KEY_USER } from "../const/StorageKeys";
-import { useUser } from "../context/UserContext";
 import { storageDelete, storageRead, storageSave } from "../utils/storage";
 import { createHeaders } from "./index";
 const apiUrl = process.env.REACT_APP_API_URL;
 
-
+// add translation to API
 const translationAPI = async (input) => {
-    let list = []
 
     const user = storageRead(STORAGE_KEY_USER)
-
-
-    if (input === '') {
-        // translation
-        list = []
-    } else {
-        list = [...user.translations, input]
-    }
     console.log(input);
     console.log(user.translations);
     try {
@@ -25,7 +15,7 @@ const translationAPI = async (input) => {
             headers: createHeaders(),
             body: JSON.stringify({
 
-                translations: list
+                translations: [...user.translations, input]
             })
         })
         if (!response.ok) {

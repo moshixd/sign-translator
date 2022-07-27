@@ -6,7 +6,7 @@ import { useUser } from "../../context/UserContext";
 
 const TranslationForm = () => {
   const { register, handleSubmit } = useForm();
-  const { user, setUser } = useUser();
+  const { setUser } = useUser();
 
   // local state
   const [translation, setTranslation] = useState();
