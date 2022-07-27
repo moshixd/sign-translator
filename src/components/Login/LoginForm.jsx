@@ -27,7 +27,7 @@ const LoginForm = () => {
   // Side effects
   useEffect(() => {
     if (user !== null) {
-      navigate("profile");
+      navigate("translation");
     }
     console.log("User has changed!", user);
   }, [user, navigate]); // Empty dependencies - Only run once
@@ -66,15 +66,15 @@ const LoginForm = () => {
       <h2>What's your name?</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
-          <label htmlFor='username'>Username: </label>
+          <label htmlFor="username">Username: </label>
           <input
-            type='text'
-            placeholder='Moshi Hoshi'
+            type="text"
+            placeholder="Moshi Hoshi"
             {...register("username", usernameConfig)}
           />
           {errorMessage}
         </fieldset>
-        <button type='submit' disabled={loading}>
+        <button type="submit" disabled={loading}>
           Log in
         </button>
 
