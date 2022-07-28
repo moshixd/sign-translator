@@ -40,7 +40,7 @@ Open upp Reveal Config Vars.
 
 Create variables API_KEY and NODE_ENV.
 
-Set API_KEY, you can find a random api key generator onlie.
+Set REACT_APP_API_KEY, you can find a random api key generator onlie.
 
 Set NODE_ENV to production.
 
