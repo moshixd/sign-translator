@@ -1,9 +1,14 @@
 * {
-  overflow: hidden;
   font-family: "Lato", sans-serif;
 }
 
 .App {
   display: flex;
   flex-direction: column;
+}
+
+#translateWord {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

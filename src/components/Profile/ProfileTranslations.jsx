@@ -1,5 +1,7 @@
 import ProfileTranslationsItem from "./ProfileTranslationsItem";
 
+import "./Profile.css";
+
 // Displays 10 last translation from API of user
 const ProfileTranslations = ({ translations }) => {
   const translationsList = translations
@@ -13,10 +15,10 @@ const ProfileTranslations = ({ translations }) => {
 
   return (
     <>
-      <section>
-        <h4>Your ten latest translations!</h4>
+      <section className="profile-body">
+        <h4 className="profile-body-label">Your latest translations!</h4>
         {translationsList.length === 0 && <p>You have no translations yet!</p>}
-        <ul>{translationsList}</ul>
+        <ol>{translationsList}</ol>
       </section>
     </>
   );

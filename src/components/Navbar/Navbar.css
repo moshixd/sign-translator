@@ -11,28 +11,6 @@
   margin-right: 8rem;
 }
 
-.button {
-  background-color: #aa3904;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-.button:hover {
-  background-color: #b94610;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-}
-
 .links {
   display: flex;
   flex-direction: row;
@@ -55,33 +33,11 @@
   text-transform: uppercase;
 }
 
-.button1 {
-  border-radius: 40px;
-}
-
 .title {
   color: #fafcfd;
   font-size: x-large;
   margin-right: 3rem;
   padding-bottom: 1rem;
-}
-
-.nav {
-  position: absolute;
-  top: 10px;
-  right: 0;
-}
-
-.nav {
-  position: absolute;
-  top: 10px;
-  right: 0;
-}
-
-.nav:hover {
-  position: absolute;
-  top: 10px;
-  right: 0;
 }
 
 #logo-picture {

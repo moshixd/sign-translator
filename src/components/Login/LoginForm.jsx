@@ -66,8 +66,8 @@ const LoginForm = () => {
   })();
 
   return (
-    <div className="main">
-      <h2 className="text">What's your name?</h2>
+    <div className="login-main">
+      <h2 className="login-text">What's your name?</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset className="login-fieldset">
           <input
@@ -81,7 +81,7 @@ const LoginForm = () => {
           </button>
         </fieldset>
 
-        {loading && <h2 className="text">Logging in...</h2>}
+        {loading && <h2 className="login-text">Logging in...</h2>}
         {apiError && <p>{apiError}</p>}
       </form>
     </div>

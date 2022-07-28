@@ -4,6 +4,8 @@ import { useState } from "react";
 import translationAPI from "../../api/translation";
 import { useUser } from "../../context/UserContext";
 
+import "./TranslationForm.css";
+
 const TranslationForm = () => {
   const { register, handleSubmit } = useForm();
   const { setUser } = useUser();
@@ -39,22 +41,37 @@ const TranslationForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onTranslation)}>
-        <fieldset>
-          <label htmlFor="translation">Text to translate: </label>
-          <input
-            type="text"
-            placeholder="What is popping?"
-            {...register("translation", translation)}
-          />
-        </fieldset>
-        <button type="submit">Translate</button>
-      </form>
-      {translation
-        ? translation.map(({ src }, index) => (
-            <img key={index} src={src} alt="" />
-          ))
-        : ""}
+      .
+      <div className="translation-main">
+        <h2 className="translation-label">
+          What word would you like translated?
+        </h2>
+        <form
+          className="translation-form"
+          onSubmit={handleSubmit(onTranslation)}
+        >
+          <fieldset className="translation-fieldset">
+            <input
+              type="text"
+              placeholder="Text to translate?"
+              {...register("translation", translation)}
+            />
+            <button type="submit">Translate</button>
+          </fieldset>
+        </form>
+      </div>
+      <div className="translation-output">
+        {translation
+          ? translation.map(({ src }, index) => (
+              <img
+                className="translation-image-item"
+                key={index}
+                src={src}
+                alt=""
+              />
+            ))
+          : ""}
+      </div>
     </>
   );
 };

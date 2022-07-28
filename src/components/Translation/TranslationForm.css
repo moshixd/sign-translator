@@ -1,0 +1,32 @@
+.translation-main {
+  background-color: teal;
+  margin-top: 3rem;
+  width: 50%;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
+
+.translation-form {
+  display: flex;
+  justify-content: center;
+}
+
+.translation-fieldset {
+  border: 0;
+}
+
+.translation-label {
+  text-align: center;
+  color: white;
+}
+
+.translation-output {
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  width: 81%;
+}
+
+.translation-image-item {
+  align-self: center;
+}
