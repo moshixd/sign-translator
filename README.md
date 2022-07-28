@@ -7,9 +7,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Connect project to Git.
 
 ## .env configuration
-This must be done in the root of your project directory
-The same place you find the package.json file
+This must be done in the root of your project directory.
+The same place you find the package.json file.
 Create a .env in the root of your project.
+Add
+REACT_APP_API_URL= XXXX(your url)
+REACT_APP_API_KEY= XXXX (your API key)
 In .gitignore file under #misc write .env
 
 ## Follow the steps to deploy your react app to Heroku.
