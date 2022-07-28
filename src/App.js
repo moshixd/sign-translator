@@ -8,12 +8,11 @@ import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
     <BrowserRouter>
-      <div className='App'>
-        <Navbar></Navbar>
+      <div className="App">
         <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/translation' element={<Translation />} />
-          <Route path='/profile' element={<Profile />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/translation" element={<Translation />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     </BrowserRouter>

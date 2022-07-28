@@ -1,3 +1,4 @@
+import Navbar from "../components/Navbar/Navbar";
 import TranslationForm from "../components/Translation/TranslationForm";
 import withAuth from "../hoc/withAuth";
 
@@ -8,9 +9,8 @@ const Translation = () => {
 
   return (
     <>
-      <h1>Login</h1>
-      <section id='translateWord'>
-        <h2>sup dawg</h2>
+      <Navbar page={"Translation"} />
+      <section id="translateWord">
         <TranslationForm onTranslate={handleTranslateClicked}></TranslationForm>
       </section>
     </>

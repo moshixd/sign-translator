@@ -1,7 +1,11 @@
+import "./Profile.css";
+
 const ProfileHeaders = ({ username }) => {
   return (
-    <header>
-      <h4>Hello {username}, here is your 10 latest translations!</h4>
+    <header className="label">
+      <h2>
+        Welcome {username}! <br />
+      </h2>
     </header>
   );
 };

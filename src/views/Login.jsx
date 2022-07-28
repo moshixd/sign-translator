@@ -1,8 +1,9 @@
 import LoginForm from "../components/Login/LoginForm";
+import Navbar from "../components/Navbar/Navbar";
 const Login = () => {
   return (
     <>
-      <h1>Login</h1>
+      <Navbar page={"Login"} />
       <LoginForm></LoginForm>
     </>
   );
