@@ -1,0 +1,90 @@
+.container {
+  padding-top: 1rem;
+  background-color: #ffc75f;
+  display: flex;
+  max-height: fit-content;
+  justify-content: space-between;
+}
+
+.icon {
+  margin-left: 5rem;
+  margin-right: 8rem;
+}
+
+.button {
+  background-color: #aa3904;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button:hover {
+  background-color: #b94610;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  width: 14rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.link-item {
+  font: bolder;
+  color: #fafcfd;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+.link-item:hover {
+  font: bolder;
+  color: #a8d7e9;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.button1 {
+  border-radius: 40px;
+}
+
+.title {
+  color: #fafcfd;
+  font-size: x-large;
+  margin-right: 3rem;
+  padding-bottom: 1rem;
+}
+
+.nav {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.nav {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.nav:hover {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+#logo-picture {
+  height: 75px;
+  margin-left: 2rem;
+}

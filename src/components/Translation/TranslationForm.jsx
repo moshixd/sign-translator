@@ -39,21 +39,20 @@ const TranslationForm = () => {
 
   return (
     <>
-      <h2>What's your name?</h2>
       <form onSubmit={handleSubmit(onTranslation)}>
         <fieldset>
-          <label htmlFor='translation'>Text to translate: </label>
+          <label htmlFor="translation">Text to translate: </label>
           <input
-            type='text'
-            placeholder='What is popping?'
+            type="text"
+            placeholder="What is popping?"
             {...register("translation", translation)}
           />
         </fieldset>
-        <button type='submit'>Translate</button>
+        <button type="submit">Translate</button>
       </form>
       {translation
         ? translation.map(({ src }, index) => (
-            <img key={index} src={src} alt='' />
+            <img key={index} src={src} alt="" />
           ))
         : ""}
     </>

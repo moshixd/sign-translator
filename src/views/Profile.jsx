@@ -1,3 +1,4 @@
+import Navbar from "../components/Navbar/Navbar";
 import ProfileAction from "../components/Profile/ProfileAction";
 import ProfileHeader from "../components/Profile/ProfileHeader";
 import ProfileTranslations from "../components/Profile/ProfileTranslations";
@@ -8,7 +9,7 @@ const Profile = () => {
 
   return (
     <>
-      <p>Profile</p>
+      <Navbar page={"Profile"} />
       <ProfileHeader username={user.username} />
       <ProfileAction />
       <ProfileTranslations translations={user.translations} />

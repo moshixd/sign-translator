@@ -1,0 +1,19 @@
+.main {
+  margin: 2rem;
+  background-color: #ffc75f;
+  padding: 2rem;
+  border-radius: 30px;
+  width: 250px;
+  align-self: center;
+}
+.login-fieldset {
+  border: 0;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+.text {
+  text-align: center;
+  color: white;
+}
