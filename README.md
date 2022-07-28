@@ -60,7 +60,7 @@ Contributers:
 
 PH (@moshixd)
 
-SA (@salahabdinor)
+SA (@SalahAbdinoor)
 
 NP (@nicolaspalaciosdiaz)
 
