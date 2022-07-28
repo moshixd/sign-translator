@@ -68,7 +68,10 @@ NP (@nicolaspalaciosdiaz)
 No one allowed
 
 # API
-https://sign-language-translation-asl.herokuapp.com/translations
+https://ph-coffe-api.herokuapp.com/translations
+
+# Heroku app deployed
+https://signies.herokuapp.com/
 
 # Figma & DrawIO
 https://www.figma.com/file/TtKCkc4T9vskDgmDZAzscs/Untitled?node-id=0%3A1
