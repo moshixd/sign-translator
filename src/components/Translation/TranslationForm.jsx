@@ -13,22 +13,27 @@ const TranslationForm = () => {
 
   const onTranslation = async (input) => {
     const word = input.translation;
-    console.log("translation", input);
+    let regEx = /^[a-z][a-z\s]*$/;
+    if (word.match(regEx)) {
+      console.log("translation", input);
 
-    let signArr = [];
+      let signArr = [];
 
-    const wordArr = word.split("");
+      const wordArr = word.split("");
 
-    for (let index = 0; index < wordArr.length; index++) {
-      const char = wordArr[index];
+      for (let index = 0; index < wordArr.length; index++) {
+        const char = wordArr[index];
 
-      let currentSignObject = signs.filter((img) => img.sign === char);
-      signArr.push(...currentSignObject);
+        let currentSignObject = signs.filter((img) => img.sign === char);
+        signArr.push(...currentSignObject);
+      }
+      const updatedUser = await translationAPI(word);
+      // console.log("updatedUser", updatedUser[1]);
+      setUser(updatedUser[1]);
+      setTranslation([...signArr]);
+    } else {
+      alert("Only letters and space");
     }
-    const updatedUser = await translationAPI(word);
-    // console.log("updatedUser", updatedUser[1]);
-    setUser(updatedUser[1]);
-    setTranslation([...signArr]);
   };
 
   return (
