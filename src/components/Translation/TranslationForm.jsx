@@ -15,7 +15,8 @@ const TranslationForm = () => {
   // Checks if user input is letters and space, if not pops a windows prompting letters, Only lower case is accepted
   // Updates user translations on API if translation goes through
   const onTranslation = async (input) => {
-    const word = input.translation;
+    let word = input.translation;
+    word = word.toString().toLowerCase();
     let regEx = /^[a-z][a-z\s]*$/;
     if (word.match(regEx)) {
       let signArr = [];
