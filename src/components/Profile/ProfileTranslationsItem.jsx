@@ -1,3 +1,5 @@
+// Displays translation
+
 const ProfileTranslationsItems = ({ translation }) => {
   return <li>{translation}</li>;
 };

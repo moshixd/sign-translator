@@ -1,5 +1,6 @@
 import ProfileTranslationsItem from "./ProfileTranslationsItem";
 
+// Displays 10 last translation from API of user
 const ProfileTranslations = ({ translations }) => {
   const translationsList = translations
     .slice(-10)
@@ -9,7 +10,6 @@ const ProfileTranslations = ({ translations }) => {
         translation={translation}
       />
     ));
-  console.log(translations);
 
   return (
     <>

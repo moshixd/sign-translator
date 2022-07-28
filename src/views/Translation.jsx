@@ -9,7 +9,7 @@ const Translation = () => {
   return (
     <>
       <h1>Login</h1>
-      <section id="translateWord">
+      <section id='translateWord'>
         <h2>sup dawg</h2>
         <TranslationForm onTranslate={handleTranslateClicked}></TranslationForm>
       </section>

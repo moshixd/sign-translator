@@ -24,7 +24,7 @@ import w from "./w.png";
 import x from "./x.png";
 import y from "./y.png";
 import z from "./z.png";
-
+// Maps picture to char for translation
 const signs = [
   { sign: "a", src: a },
   { sign: "b", src: b },

@@ -7,6 +7,7 @@ import { storageDelete, storageSave } from "../../utils/storage";
 const ProfileAction = ({ logout }) => {
   const { user, setUser } = useUser();
 
+  // Function for logging out, deletes current session storage and redirects to login page
   const handleLogoutClick = () => {
     if (window.confirm("Are you sure?")) {
       storageDelete(STORAGE_KEY_USER);
@@ -14,6 +15,7 @@ const ProfileAction = ({ logout }) => {
     }
   };
 
+  // Deletes translations from API of user, warns before doing it.
   const handleClearHistory = async () => {
     if (!window.confirm("Are you sure?\nThis cannot be undone!")) {
       return;
@@ -36,7 +38,7 @@ const ProfileAction = ({ logout }) => {
   return (
     <>
       <ul>
-        <Link to="translation"></Link>
+        <Link to='translation'></Link>
         <li>
           <button onClick={handleClearHistory}>Clear translations</button>
         </li>

@@ -11,6 +11,8 @@ const usernameConfig = {
   minLength: 3,
 };
 
+// The form for logging in with relevant functions such as logging in, creating a new user if not existing.
+// Moves user to translation page when logging in or creating a new user and logging in.
 const LoginForm = () => {
   const {
     register,
@@ -29,7 +31,6 @@ const LoginForm = () => {
     if (user !== null) {
       navigate("translation");
     }
-    console.log("User has changed!", user);
   }, [user, navigate]); // Empty dependencies - Only run once
 
   // Event handlers
@@ -47,6 +48,7 @@ const LoginForm = () => {
   };
 
   // render functions
+  // error messages and input validation
   const errorMessage = (() => {
     if (!errors.username) {
       return null;
@@ -66,15 +68,15 @@ const LoginForm = () => {
       <h2>What's your name?</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
-          <label htmlFor="username">Username: </label>
+          <label htmlFor='username'>Username: </label>
           <input
-            type="text"
-            placeholder="Moshi Hoshi"
+            type='text'
+            placeholder='Moshi Hoshi'
             {...register("username", usernameConfig)}
           />
           {errorMessage}
         </fieldset>
-        <button type="submit" disabled={loading}>
+        <button type='submit' disabled={loading}>
           Log in
         </button>
 

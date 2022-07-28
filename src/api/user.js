@@ -1,7 +1,7 @@
 import { createHeaders } from "./index";
 const apiURL = process.env.REACT_APP_API_URL;
 
-// checks if user exist in api, if not return empty array
+// Checks if user exist in api, if not return empty array
 const checkForUser = async (username) => {
   try {
     const response = await fetch(`${apiURL}?username=${username}`);
@@ -14,7 +14,7 @@ const checkForUser = async (username) => {
     return [error.message, []];
   }
 };
-// creates a user, posting to api, if error occurs throws error message
+// Creates a user, posting to api, if error occurs throws error message
 const createUser = async (username) => {
   try {
     const response = await fetch(apiURL, {
@@ -35,7 +35,7 @@ const createUser = async (username) => {
   }
 };
 
-// logs in user, if user not registered, adds user and creates user.
+// Logs in user, if user not registered, adds user and creates user.
 export const loginUser = async (username) => {
   const [checkError, user] = await checkForUser(username);
 

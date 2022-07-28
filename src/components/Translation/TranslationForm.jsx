@@ -11,12 +11,13 @@ const TranslationForm = () => {
   // local state
   const [translation, setTranslation] = useState();
 
+  // The translating function, takes in an input from user and translates into hand signs
+  // Checks if user input is letters and space, if not pops a windows prompting letters, Only lower case is accepted
+  // Updates user translations on API if translation goes through
   const onTranslation = async (input) => {
     const word = input.translation;
     let regEx = /^[a-z][a-z\s]*$/;
     if (word.match(regEx)) {
-      console.log("translation", input);
-
       let signArr = [];
 
       const wordArr = word.split("");
@@ -28,7 +29,6 @@ const TranslationForm = () => {
         signArr.push(...currentSignObject);
       }
       const updatedUser = await translationAPI(word);
-      // console.log("updatedUser", updatedUser[1]);
       setUser(updatedUser[1]);
       setTranslation([...signArr]);
     } else {

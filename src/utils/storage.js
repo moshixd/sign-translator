@@ -1,9 +1,11 @@
+// Handles session storage functions
+
 export const storageSave = (key, value) => {
-  if (!key || typeof key !== 'string') {
-    throw new Error('storageSave: Invalid storage key provided')
+  if (!key || typeof key !== "string") {
+    throw new Error("storageSave: Invalid storage key provided");
   }
   if (!value) {
-    throw new Error('storageSave: No storage key provided' + key)
+    throw new Error("storageSave: No storage key provided" + key);
   }
   sessionStorage.setItem(key, JSON.stringify(value));
 };
@@ -19,4 +21,4 @@ export const storageRead = (key) => {
 
 export const storageDelete = (key) => {
   const data = sessionStorage.removeItem(key);
-}
+};
