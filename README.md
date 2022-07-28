@@ -10,25 +10,39 @@ Connect project to Git.
 This must be done in the root of your project directory.
 The same place you find the package.json file.
 Create a .env in the root of your project.
-Add
-REACT_APP_API_URL= XXXX(your url)
-REACT_APP_API_KEY= XXXX (your API key)
-In .gitignore file under #misc write .env
+
+Add:
+
+REACT_APP_API_URL= XXXX(your url).
+
+REACT_APP_API_KEY= XXXX (your API key).
+
+Then in .gitignore file under #misc write .env
 
 ## Follow the steps to deploy your react app to Heroku.
 Install heroku cli and create an heroku account.
+
 This must be done in the root of your project directory(
 heroku login
 heroku create --buildpack mars/create-react-app
+
 git add .
+
 git commit -m "DEPLOY: Heroku buildpack"
+
 git push heroku master # Could also be main depending on your setup.
 )
+
 Create an API from https://github.com/dewald-els/noroff-assignment-api change it's name. Open the api, navigate to setting.
+
 Open upp Reveal Config Vars.
+
 Create variables API_KEY and NODE_ENV.
+
 Set API_KEY, you can find a random api key generator onlie.
+
 Set NODE_ENV to production.
+
 in .env set the values API_KEY and NODE_ENV.
 
 # Install
@@ -36,11 +50,15 @@ npm instal
 
 # Usage
 Appliction for translating modern english with 26 letters to signlanguage.
+
 This will open a new Webpage in your browser at localhost:xxxx. Remember to use your React and Redux browser extentions.
 
-Contributers
+Contributers:
+
 PH (@moshixd)
+
 SA (@salahabdinor)
+
 NP (@nicolaspalaciosdiaz)
 
 ## Contributing
@@ -59,22 +77,27 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
+
 You may also see any lint errors in the console.
 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
+
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
+
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
+
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
