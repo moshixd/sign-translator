@@ -17,7 +17,7 @@ REACT_APP_API_URL= XXXX(your url).
 
 REACT_APP_API_KEY= XXXX (your API key).
 
-Then in .gitignore file under #misc write .env
+Then in .gitignore file under #misc write .env to hide environment variables when publishing to git.
 
 ## Follow the steps to deploy your react app to Heroku.
 Install heroku cli and create an heroku account.
