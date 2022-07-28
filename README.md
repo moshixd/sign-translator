@@ -1,5 +1,7 @@
 # Sign Language Translator
 
+A project during talent upskilling from Noroff, using REACT to make an application to translate english letters or words to sign language.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
